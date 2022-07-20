@@ -95,5 +95,5 @@
 	}
 	echo '</table>';
 
-	echo "<br><br><center><a href='../home.php'>Home</a></center>"
+	echo "<br><br><center><a href='../index.php'>Home</a></center>"
 ?>
