@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kalkulator</title>
+	<style type="text/css">
+		button{
+			background-color: lightgrey;
+			height: 60px;
+			width: 60px;
+		}
+		button:hover{
+			background-color: white;
+		}
+		input{
+			height: 60px;
+			width: auto;
+		}
+		#input {
+	        height: 120px;
+	        font-size: 40px;
+	        vertical-align: bottom;
+	        text-align: right;
+	        padding-right: 16px;
+	        background-color: #ececec;
+   		}
+   		body{
+   			background: transparent;
+   		}
+   		a{
+			width: 200px;
+			padding: 8px 16px;
+			text-align: center;
+			text-decoration: none;
+			margin: 0 10px;
+			border-radius: 25px;
+			font-weight: bold;
+			border: 2px solid #0000ab;
+			background: #0000ab;
+			color: #fff;
+			cursor: pointer;
+			transition: background 0.4s;
+		}
+		a.is-active, a:hover{
+			background-color: transparent;
+			color: black;
+			border: 2px solid black;
+		}
+		.home{
+			background-color: white;
+			padding: 30px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div><center>
+	<table border="1"  style="background-color: darkblue; height: 100%;">
+		<tr>
+			<td colspan="4" id="input">0</td>
+		</tr>
+		<tr>
+			<td>
+			<table>
+				<tr>
+					<td><button onclick="clickbtn(this);">(</button></td>
+					<td><button onclick="clickbtn(this);">)</button></td>
+					<td><button onclick="clickbtn(this);">%</button></td>
+					<td><button onclick="clickbtn(this);">AC</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="clickbtn(this);">7</button></td>
+					<td><button onclick="clickbtn(this);">8</button></td>
+					<td><button onclick="clickbtn(this);">9</button></td>
+					<td><button onclick="clickbtn(this);">:</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="clickbtn(this);">4</button></td>
+					<td><button onclick="clickbtn(this);">5</button></td>
+					<td><button onclick="clickbtn(this);">6</button></td>
+					<td><button onclick="clickbtn(this);">x</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="clickbtn(this);">1</button></td>
+					<td><button onclick="clickbtn(this);">2</button></td>
+					<td><button onclick="clickbtn(this);">3</button></td>
+					<td><button onclick="clickbtn(this);">-</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="clickbtn(this);">0</button></td>
+					<td><button onclick="clickbtn(this);">.</button></td>
+					<td><button onclick="clickbtn(this);">=</button></td>
+					<td><button onclick="clickbtn(this);">+</button></td>
+				</tr>
+			</table></td></tr>
+			<tr>
+				<td class="home"><center><a href="home.php">Home</a></center></td>
+			</tr>
+	</center>
+	</div>
+	<script>
+		var input = document.getElementById("input");
+
+		function clickbtn(obj) {
+
+			var click = obj.innerHTML;
+
+			if(click == '='){
+				//hasil
+				input.innerHTML = eval(input.innerHTML);
+			}
+			else if(click =='AC'){
+				//clear
+				input.innerHTML= '0';
+			}
+			else{
+				if(input.innerHTML == '0'){
+					input.innerHTML = click;
+				}
+				else{
+					input.innerHTML += click;
+				}
+			}
+		}
+	</script>
+	
+</body>
+</html>
